@@ -9,7 +9,7 @@
 
 - 🌱 I’m currently learning **Fullstacks , AI and ML**
 
-- 👨‍💻 All of my projects are available at [https://alexianera.neocities.org/](https://alexianera.neocities.org/)
+- 👨‍💻 All of my projects are available at [https://alexianera.neocities.org/](https://kshitishkumar.vercel.app/)
 
 - 💬 Ask me about **Tech Enthusiast | Innovation | Lifelong Learner**
 
