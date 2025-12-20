@@ -6,13 +6,7 @@
   </a>
 </div>
 
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=khitishnayak&label=Profile%20views&color=0e75b6&style=for-the-badge" alt="khitishnayak" />
-  <br><br>
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=khitishnayak&theme=radical&no-frame=true&margin-w=15&margin-h=15" alt="khitishnayak" />
-  </a>
-</div>
+
 
 ---
 
@@ -20,7 +14,6 @@
 
 - 🔭 I’m currently working on **Defense-grade Surveillance Systems & AI Ecosystems**.
 - 🌱 I’m currently learning **Advanced Computer Vision & Fullstack Architecture**.
-- 💡 Founder of **A1 Nexus Systems**.
 - 🐧 I operate on **Garuda Linux**.
 - 💬 Ask me about **AI, Machine Learning, Innovation, and Startup Growth**.
 - 📫 Reach me at: **kknayak049@gmail.com**
