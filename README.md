@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=220&section=header&text=Khitish%20Kumar&fontSize=80&animation=fadeIn&fontAlignY=35&desc=AI%20Researcher%20%7C%20Tech%20Visionary%20%7C%20Founder&descAlignY=55&descAlign=50" alt="Header" />
   
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&pause=1000&color=3382F7&center=true&vCenter=true&width=435&lines=Founder+of+A1+Nexus+Systems;Building+Next-Gen+AI+Solutions;Explaining+Code+to+Humans;Garuda+Linux+Enthusiast" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&pause=1000&color=3382F7&center=true&vCenter=true&width=435&lines=Founder+of+Nexus+Technology;Building+Next-Gen+AI+Solutions;Explaining+Code+to+Humans;Garuda+Linux+Enthusiast" alt="Typing SVG" />
   </a>
 </div>
 
@@ -12,7 +12,7 @@
 
 ### 👨‍💻 About Me
 
-- 🔭 I’m currently working on **Defense-grade Surveillance Systems & AI Ecosystems**.
+- 🔭 I’m currently pursing  **BTech CSE Specialization in AI/ML**.
 - 🌱 I’m currently learning **Advanced Computer Vision & Fullstack Architecture**.
 - 🐧 I operate on **Garuda Linux**.
 - 💬 Ask me about **AI, Machine Learning, Innovation, and Startup Growth**.
