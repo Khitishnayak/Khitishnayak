@@ -14,12 +14,12 @@
 
 - 🔭 I’m currently pursing  **BTech CSE Specialization in AI/ML**.
 - 🌱 I’m currently learning **Advanced Computer Vision & Fullstack Architecture**.
-- 🐧 I operate on **Garuda Linux**.
+- 🐧 I operate on **Arch Linux Hyprland**.
 - 💬 Ask me about **AI, Machine Learning, Innovation, and Startup Growth**.
 - 📫 Reach me at: **kknayak049@gmail.com**
 
 <div align="center">
-  <a href="https://kshitishkumar.vercel.app/"><strong>Explore my Portfolio »</strong></a>
+  <a href="https://khitishkumar.vercel.app/"><strong>Explore my Portfolio »</strong></a>
 </div>
 
 ---
