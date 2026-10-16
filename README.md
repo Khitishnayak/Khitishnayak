@@ -1,27 +1,51 @@
 <div align="center">
 
-<!-- Hero Banner Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:050811,25:00f0ff,70:7928ca,100:ff007f&height=230&section=header&text=KHITISH%20KUMAR&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=AI%20Engineer%20%E2%9C%A6%20Creative%20Full-Stack%20Architect%20%E2%9C%A6%20Arch%20Linux&descAlignY=58&descSize=18" width="100%" alt="Khitish Kumar Header" />
-
-<!-- Animated Dynamic Typing Subtitle -->
-<a href="https://khitishkumar.vercel.app/">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=21&duration=3000&pause=1000&color=00F0FF&center=true&vCenter=true&width=650&lines=AI+Engineer+%26+Full-Stack+Architect;Building+Autonomous+Agents+%26+Intelligent+Systems;Arch+Linux+%2B+Hyprland+Wayland+Power+User;Crafting+High-Performance+Modern+Web+%26+3D;Turning+Complex+Neural+Logic+into+Art" alt="Typing SVG" />
+<!-- Cinematic Film Banner: Boy Coding Overlooking Futuristic Tech City -->
+<a href="https://khitishkumar.vercel.app/" target="_blank">
+  <img src="./assets/banner.jpg" width="100%" style="border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.6);" alt="Khitish Kumar // Late Night Coding Overlooking Tech City" />
 </a>
 
-<br>
+<br><br>
 
-<!-- Aesthetic Status Chips -->
+# 🎬 ᴋʜɪᴛɪꜱʜ ᴋᴜᴍᴀʀ
+### *AI Systems Engineer & Full-Stack Architect • Startup Founder Spirit*
+
+<p>
+  <i>"Somewhere between 03:00 AM, glowing monitors, and dark roast coffee — the future is compiled."</i>
+</p>
+
+<!-- Video Playbar / Ambient Soundtrack HUD -->
+<p align="center">
+  <code>▶ 02:47 ━━━━━━━━━━━━━━━━━━━━●────── 04:20 &nbsp; ⇄ &nbsp; ◃◃ &nbsp; ⅠⅠ &nbsp; ▹▹ &nbsp; ↻ &nbsp; 🔊 85%</code><br>
+  <sub>🎧 <b>Now Playing:</b> <i>Lofi Beats & Synthwave // Midnight in the High-Rise Studio (Overlooking Neon Horizon)</i></sub>
+</p>
+
+<!-- Dynamic Animated Typing Reel -->
+<a href="https://khitishkumar.vercel.app/">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=17&duration=2800&pause=900&color=00F0FF&center=true&vCenter=true&width=620&lines=Building+Autonomous+AI+Agents+%26+Intelligent+Pipelines...;Crafting+Next-Gen+Full-Stack+Startup+Products...;Late+Night+Coding+Sessions+from+the+High-Rise+Lab...;Arch+Linux+%2B+Hyprland+Wayland+Power+User;Turning+Deep+Abstract+Concepts+into+Art..." alt="Typing SVG" />
+</a>
+
+<br><br>
+
+<!-- Aesthetic Telemetry Chips -->
 <a href="https://github.com/Khitishnayak">
-  <img src="https://komarev.com/ghpvc/?username=Khitishnayak&style=for-the-badge&color=00f0ff&labelColor=0d1117&label=PROFILE+VIEWS" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=Khitishnayak&style=flat-square&color=00f0ff&labelColor=16161e&label=VIEWS" alt="Profile Views" />
 </a>
+&nbsp;
 <a href="https://github.com/Khitishnayak?tab=followers">
-  <img src="https://img.shields.io/github/followers/khitishnayak?style=for-the-badge&color=ff007f&labelColor=0d1117&logo=github&logoColor=white" alt="GitHub Followers" />
+  <img src="https://img.shields.io/github/followers/khitishnayak?style=flat-square&color=bb9af7&labelColor=16161e&logo=github&logoColor=white" alt="Followers" />
 </a>
+&nbsp;
 <a href="https://khitishkumar.vercel.app/">
-  <img src="https://img.shields.io/badge/STATUS-ACTIVE%20BUILDING-39ff14?style=for-the-badge&labelColor=0d1117" alt="Status" />
+  <img src="https://img.shields.io/badge/MODE-STARTUP%20BUILDER-7aa2f7?style=flat-square&labelColor=16161e" alt="Mode" />
 </a>
+&nbsp;
 <a href="https://archlinux.org/">
-  <img src="https://img.shields.io/badge/OS-ARCH%20%7C%20HYPRLAND-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white&labelColor=0d1117" alt="OS" />
+  <img src="https://img.shields.io/badge/OS-ARCH%20%7C%20HYPRLAND-2ac3de?style=flat-square&logo=arch-linux&logoColor=white&labelColor=16161e" alt="OS" />
+</a>
+&nbsp;
+<a href="mailto:kknayak049@gmail.com">
+  <img src="https://img.shields.io/badge/SIGNAL-AVAILABLE%20FOR%20HIRE-9ece6a?style=flat-square&labelColor=16161e" alt="Signal" />
 </a>
 
 </div>
@@ -30,66 +54,66 @@
 
 ---
 
-### 📡 System Telemetry // Operator HUD
+### 🌆 Scene 01 // The High-Rise Sanctum
 
 ```text
-╭─────────────────────────────────────────────────────────────────────────────╮
-│  OPERATOR PROTOCOL // SPECIFICATIONS                                        │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  ⚡ IDENTITY        │ Khitish Kumar Nayak                                    │
-│  🧠 SPECIALIZATION  │ Artificial Intelligence • Full-Stack Systems • WebGL   │
-│  🏛️ INSTITUTION     │ Lovely Professional University (LPU)                   │
-│  📍 COORDINATES     │ Jalandhar, Punjab, India                               │
-│  🐧 WORKSTATION     │ Arch Linux (Rolling) • Hyprland • Wayland Compositor   │
-│  💻 DEV TOOLCHAIN   │ Neovim (LazyVim) • Zsh • Alacritty                     │
-│  🚀 CURRENT FOCUS   │ Autonomous Multi-Agent Systems & Deep Learning R&D     │
-│  🌐 PORTFOLIO       │ https://khitishkumar.vercel.app                        │
-│  📫 TRANSMISSION    │ kknayak049@gmail.com                                   │
-│  ✨ MOTTO           │ "Turning abstract mathematics and code into art."      │
-╰─────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  STATION ZERO // 42ND FLOOR OVERLOOKING SILICON HORIZON                      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  🌃 SCENERY     │ Floor-to-ceiling glass window, cyber night, highway trails │
+│  👨‍💻 OPERATOR    │ Khitish Kumar Nayak (AI Engineer & Full-Stack Architect)    │
+│  ☕ FUEL        │ Steaming dark roast pour-over & relentless obsession       │
+│  🐧 WORKSPACE   │ Arch Linux (Rolling) • Hyprland • Neovim • Alacritty       │
+│  🧠 DOMAINS     │ Autonomous Multi-Agent AI • WebGL 3D • Distributed APIs    │
+│  🏛️ ACADEMY     │ Lovely Professional University (LPU)                       │
+│  📍 COORDINATES │ Jalandhar, Punjab, India                                   │
+│  🌐 PORTFOLIO   │ https://khitishkumar.vercel.app                            │
+│  📫 TRANSMIT    │ kknayak049@gmail.com                                       │
+│  ✨ CREED       │ "Software shouldn't just work — it should feel alive."     │
+╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ---
 
-### 🛰️ Live Transmissions // What I'm Hacking On
+### 🎬 Scene 02 // What's On The Screen (The Startup Lab)
 
-- 🔭 **Architecting**: Next-generation autonomous AI agent workflows and distributed backend architectures.
-- 🎨 **Engineering**: Silky, award-caliber interactive web platforms leveraging **Three.js**, **GSAP**, and **React**.
-- 🔬 **Investigating**: Multimodal neural networks, high-efficiency vision models, and low-latency inference pipelines.
-- 🐧 **Ricing**: Custom Arch Linux + Hyprland setup tailored for extreme development speed and zero-latency workflows.
-- 💬 **Collaborating**: Open to bold projects, innovative machine learning engineering, and impactful tech ventures.
+- 🔭 **Building the Future**: Architecting autonomous LLM multi-agent systems and real-time neural inference pipelines.
+- ⚡ **Startup Velocity**: Shipping high-leverage products from zero-to-one with rapid iteration and zero compromises on design.
+- 🎨 **Visual Physics**: Engineering fluid, physics-based interactive web experiences using **Three.js**, **GSAP**, and **React**.
+- 🐧 **Custom Workstation**: Daily driving a tuned Arch Linux + Hyprland rice with custom keybindings and Neovim workflows.
+- 🤝 **The Open Horizon**: Collaborating with founders, researchers, and fellow builders on audacious ideas.
 
 ---
 
-### ⚡ Weapons of Choice // Tech Arsenal
+### ⚡ Scene 03 // The Workbench (Tools of Creation)
 
 <div align="center">
 
-#### 🧠 Artificial Intelligence & Machine Learning
+#### 🧠 Neural Architectures & Artificial Intelligence
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,scikitlearn,opencv,fastapi&theme=dark" alt="AI & ML" />
   </a>
 </p>
 
-#### 🎨 Frontend & Creative Web Engineering
+#### 🎨 Creative Web & Interface Engineering
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=react,nextjs,ts,js,tailwind,redux,threejs,html,css&theme=dark" alt="Frontend" />
   </a>
 </p>
 
-#### 🛠️ Backend, Cloud & Distributed Databases
+#### 🛠️ Distributed Backends, Databases & Cloud
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=nodejs,express,postgres,mongodb,mysql,redis,docker,gcp,vercel&theme=dark" alt="Backend & Cloud" />
   </a>
 </p>
 
-#### 🐧 Workstation, System Architecture & Tooling
+#### 🐧 Cockpit & Systems Engineering
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=arch,linux,neovim,git,githubactions,postman,bash&theme=dark" alt="Workstation & Tools" />
+    <img src="https://skillicons.dev/icons?i=arch,linux,neovim,git,githubactions,postman,bash&theme=dark" alt="Cockpit & Tools" />
   </a>
 </p>
 
@@ -97,38 +121,38 @@
 
 ---
 
-### 🏆 Featured Deployments // Showcase
+### 🎞️ Scene 04 // The Featured Works (Filmography)
 
 <div align="center">
 
-| Project | Description | Stack | Link |
+| Project Reel | Scenario & Architecture | Stack | Reel Link |
 | :--- | :--- | :--- | :---: |
-| 🧠 **[Medhamind](https://github.com/Khitishnayak/Medhamind)** | AI-powered mental health chatbot companion featuring empathetic conversational intelligence & sentiment analysis. | `Python` `NLP` `React` `FastAPI` | [**Inspect ↗**](https://github.com/Khitishnayak/Medhamind) |
-| 🎨 **[FloatPen](https://github.com/Khitishnayak/floatpen)** | Ultra-responsive, lightweight canvas drawing & screen annotation platform with smooth touch & stylus handling. | `TypeScript` `Canvas API` `Tailwind` | [**Inspect ↗**](https://github.com/Khitishnayak/floatpen) |
-| ⚡ **[SPYLT](https://github.com/Khitishnayak/Splyt-Gsap)** | High-polish interactive web showcase featuring complex GSAP scroll triggers and physics-driven micro-interactions. | `JavaScript` `GSAP` `CSS3` | [**Inspect ↗**](https://github.com/Khitishnayak/Splyt-Gsap) |
-| 🧺 **[Uber For Laundry](https://github.com/Khitishnayak/UBER-FOR-LAUNDRY)** | On-demand multi-sided service platform handling real-time booking, pickup dispatching & order lifecycle. | `React` `Node.js` `Express` `MongoDB` | [**Inspect ↗**](https://github.com/Khitishnayak/UBER-FOR-LAUNDRY) |
-| 🌐 **[3D Portfolio](https://github.com/Khitishnayak/3D-PORTFOLIO)** | Immersive 3D interactive portfolio featuring dynamic lighting, shaders, and spatial interactive nodes. | `Three.js` `WebGL` `React` | [**Inspect ↗**](https://github.com/Khitishnayak/3D-PORTFOLIO) |
-| ✈️ **[TravelWise](https://github.com/Khitishnayak/Travelwise1)** | Smart travel itinerary architect and dynamic destination exploration engine. | `React` `REST APIs` `Tailwind` | [**Inspect ↗**](https://github.com/Khitishnayak/Travelwise1) |
+| 🧠 **[Medhamind](https://github.com/Khitishnayak/Medhamind)** | AI-powered mental health companion featuring compassionate conversational intelligence & emotional sentiment tracking. | `Python` `NLP` `FastAPI` `React` | [**Roll Film ↗**](https://github.com/Khitishnayak/Medhamind) |
+| 🎨 **[FloatPen](https://github.com/Khitishnayak/floatpen)** | Ultra-responsive, frictionless canvas drawing & screen annotation platform engineered for thinkers and creators. | `TypeScript` `Canvas API` `Tailwind` | [**Roll Film ↗**](https://github.com/Khitishnayak/floatpen) |
+| ⚡ **[SPYLT](https://github.com/Khitishnayak/Splyt-Gsap)** | Awwwards-caliber interactive web showcase boasting silky micro-interactions & physics-based GSAP transitions. | `JavaScript` `GSAP` `CSS3` | [**Roll Film ↗**](https://github.com/Khitishnayak/Splyt-Gsap) |
+| 🧺 **[Uber For Laundry](https://github.com/Khitishnayak/UBER-FOR-LAUNDRY)** | On-demand service logistics platform orchestrating real-time dispatch, customer booking & lifecycle management. | `React` `Node.js` `Express` `MongoDB` | [**Roll Film ↗**](https://github.com/Khitishnayak/UBER-FOR-LAUNDRY) |
+| 🌐 **[3D Portfolio](https://github.com/Khitishnayak/3D-PORTFOLIO)** | Spatial WebGL developer portfolio featuring dynamic three-dimensional lighting, shaders, and interactive nodes. | `Three.js` `WebGL` `React` | [**Roll Film ↗**](https://github.com/Khitishnayak/3D-PORTFOLIO) |
+| ✈️ **[TravelWise](https://github.com/Khitishnayak/Travelwise1)** | Intelligent travel itinerary architect and dynamic destination exploration engine. | `React` `REST APIs` `Tailwind` | [**Roll Film ↗**](https://github.com/Khitishnayak/Travelwise1) |
 
 </div>
 
 ---
 
-### 📊 GitHub Telemetry & Activity Matrix
+### 📊 Scene 05 // Telemetry & Activity Matrix
 
 <div align="center">
 
 <a href="https://github.com/Khitishnayak">
-  <img src="https://github-readme-stats.vercel.app/api?username=Khitishnayak&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00f0ff&icon_color=ff007f&text_color=94a3b8" height="175" alt="Khitish's GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Khitishnayak&show_icons=true&theme=tokyonight&hide_border=true&bg_color=16161e&title_color=00f0ff&icon_color=bb9af7&text_color=94a3b8" height="175" alt="Khitish's GitHub Stats" />
 </a>
 <a href="https://github.com/Khitishnayak">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Khitishnayak&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00f0ff&text_color=94a3b8&langs_count=8" height="175" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Khitishnayak&layout=compact&theme=tokyonight&hide_border=true&bg_color=16161e&title_color=00f0ff&text_color=94a3b8&langs_count=8" height="175" alt="Top Languages" />
 </a>
 
 <br><br>
 
 <a href="https://github.com/Khitishnayak">
-  <img src="https://streak-stats.demolab.com/?user=Khitishnayak&theme=tokyonight&hide_border=true&background=0d1117&stroke=00f0ff&ring=ff007f&fire=ff007f&currStreakNum=00f0ff&sideNums=00f0ff&currStreakLabel=94a3b8&sideLabels=94a3b8&dates=64748b" width="95%" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=Khitishnayak&theme=tokyonight&hide_border=true&background=16161e&stroke=00f0ff&ring=bb9af7&fire=bb9af7&currStreakNum=00f0ff&sideNums=00f0ff&currStreakLabel=94a3b8&sideLabels=94a3b8&dates=64748b" width="95%" alt="GitHub Streak" />
 </a>
 
 </div>
@@ -137,7 +161,7 @@
 
 <div align="center">
 
-#### 🐍 Code Matrix // Contribution Stream
+#### 🐍 Midnight Matrix // Contribution Stream
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Khitishnayak/Khitishnayak/output/github-contribution-grid-snake-dark.svg">
@@ -149,22 +173,22 @@
 
 ---
 
-### 🎯 Mastery Metrics
+### 🎯 Skill Spectrum // Diagnostics
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│  AI & Machine Learning Pipelines   ██████████████████░░░░░  90%             │
-│  Python & High-Performance Async   ███████████████████░░░░  94%             │
+│  AI & Machine Learning Systems     ██████████████████░░░░░  90%             │
+│  Python, Async & Microservices     ███████████████████░░░░  94%             │
 │  Modern React & TypeScript         ████████████████████░░░  96%             │
 │  Creative Web (Three.js & GSAP)    ██████████████████░░░░░  91%             │
 │  Linux / Arch System Engineering   ███████████████████░░░░  95%             │
-│  Cloud, Docker & DevOps Workflows  ████████████████░░░░░░░  82%             │
+│  Cloud, Docker & DevOps Pipelines  ████████████████░░░░░░░  82%             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-### 🌐 Establish Connection // Uplink
+### 📻 Scene 06 // End Credits & Uplink (Connect)
 
 <div align="center">
 
@@ -192,17 +216,13 @@
   <img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
 </a>
 
-</div>
+<br><br>
 
-<br>
+<p align="center">
+  <i>"We are the architects of the silent hours, building the software that greets the morning sun."</i>
+</p>
 
-<div align="center">
-
-<!-- Hero Banner Footer -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff007f,25:7928ca,75:00f0ff,100:050811&height=120&section=footer&text=Stay%20Cyber%20%E2%9C%A6%20Never%20Settle&fontSize=22&fontColor=ffffff&fontAlignY=65" width="100%" alt="Footer" />
-
-**`</>` Engineered with ⚡ and relentless curiosity by Khitish Kumar**
-
-*Running on Arch Linux + Hyprland // 2026*
+**`</>` Produced & Directed with ⚡ by Khitish Kumar**<br>
+<sub>Arch Linux • Hyprland • Neovim • 2026</sub>
 
 </div>
