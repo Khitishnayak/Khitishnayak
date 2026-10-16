@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="230" viewBox="0 0 760 230" fill="none">
+  <style>
+    .terminal-bg { fill: #0d1117; stroke: #30363d; stroke-width: 1.5; rx: 10px; }
+    .title-bar { fill: #161b22; }
+    .btn-red { fill: #ff5f56; }
+    .btn-yellow { fill: #ffbd2e; }
+    .btn-green { fill: #27c93f; }
+    .title-text { fill: #8b949e; font-family: 'Fira Code', 'Courier New', monospace; font-size: 12px; }
+    .code-text { font-family: 'Fira Code', 'Courier New', monospace; font-size: 13.5px; }
+    .prompt { fill: #00F0FF; font-weight: bold; }
+    .cmd { fill: #e6edf3; }
+    .output-cyan { fill: #58a6ff; }
+    .output-green { fill: #39d353; }
+    .output-magenta { fill: #ff7b72; }
+    .output-yellow { fill: #e3b341; }
+    
+    .cursor {
+      fill: #00F0FF;
+      animation: blink 0.9s infinite;
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .line1 { opacity: 0; animation: showLine 12s infinite; animation-delay: 0.2s; }
+    .line2 { opacity: 0; animation: showLine 12s infinite; animation-delay: 1.4s; }
+    .line3 { opacity: 0; animation: showLine 12s infinite; animation-delay: 2.6s; }
+    .line4 { opacity: 0; animation: showLine 12s infinite; animation-delay: 3.8s; }
+    .line5 { opacity: 0; animation: showLine 12s infinite; animation-delay: 5.0s; }
+
+    @keyframes showLine {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      92% { opacity: 1; }
+      98% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+  </style>
+
+  <!-- Terminal Window Background -->
+  <rect class="terminal-bg" width="760" height="230" rx="10" />
+  
+  <!-- Title Bar -->
+  <path class="title-bar" d="M0 10C0 4.47715 4.47715 0 10 0H750C755.523 0 760 4.47715 760 10V32H0V10Z" />
+  <circle class="btn-red" cx="20" cy="16" r="6" />
+  <circle class="btn-yellow" cx="40" cy="16" r="6" />
+  <circle class="btn-green" cx="60" cy="16" r="6" />
+  <text class="title-text" x="380" y="20" text-anchor="middle">khitish@arch-hyprland: ~/startup-sanctum</text>
+
+  <!-- Terminal Live Execution Stream -->
+  <g class="code-text" transform="translate(24, 60)">
+    <!-- Line 1: Command -->
+    <g class="line1">
+      <text class="prompt" x="0" y="0">➜</text>
+      <text class="output-cyan" x="20" y="0">startup-lab</text>
+      <text class="prompt" x="120" y="0">git:(main)</text>
+      <text class="cmd" x="205" y="0">./launch_night_shift.sh --city="Silicon Horizon"</text>
+    </g>
+
+    <!-- Line 2: Output -->
+    <g class="line2">
+      <text class="output-cyan" x="0" y="32">[03:00 AM]</text>
+      <text class="cmd" x="90" y="32">Connecting to High-Rise Station Zero neural matrix...</text>
+      <text class="output-green" x="540" y="32">[CONNECTED]</text>
+    </g>
+
+    <!-- Line 3: AI Agents -->
+    <g class="line3">
+      <text class="output-magenta" x="0" y="64">[SYSTEM]</text>
+      <text class="cmd" x="78" y="64">Spawning autonomous agent swarms &amp; PyTorch pipelines...</text>
+      <text class="output-green" x="540" y="64">[ACTIVE ⚡]</text>
+    </g>
+
+    <!-- Line 4: Graphics & UI -->
+    <g class="line4">
+      <text class="output-yellow" x="0" y="96">[GRAPHICS]</text>
+      <text class="cmd" x="90" y="96">Initializing Three.js WebGL shaders &amp; GSAP physics engine...</text>
+      <text class="output-green" x="540" y="96">[60 FPS ✦]</text>
+    </g>
+
+    <!-- Line 5: Current Live State -->
+    <g class="line5">
+      <text class="prompt" x="0" y="128">⚡ STATUS</text>
+      <text class="output-green" x="78" y="128">Ready to disrupt. Compiling the future through the night...</text>
+      <rect class="cursor" x="555" y="115" width="8" height="15" />
+    </g>
+  </g>
+</svg>

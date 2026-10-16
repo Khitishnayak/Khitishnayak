@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="24" viewBox="0 0 300 24" fill="none">
+  <style>
+    .bar {
+      fill: url(#eqGrad);
+      transform-origin: bottom;
+      animation: bounce 1.2s ease-in-out infinite alternate;
+    }
+    @keyframes bounce {
+      0% { transform: scaleY(0.2); }
+      50% { transform: scaleY(0.85); }
+      100% { transform: scaleY(0.35); }
+    }
+    .b1 { animation-delay: 0.1s; }
+    .b2 { animation-delay: 0.4s; }
+    .b3 { animation-delay: 0.2s; }
+    .b4 { animation-delay: 0.6s; }
+    .b5 { animation-delay: 0.3s; }
+    .b6 { animation-delay: 0.7s; }
+    .b7 { animation-delay: 0.15s; }
+    .b8 { animation-delay: 0.5s; }
+    .b9 { animation-delay: 0.35s; }
+    .b10 { animation-delay: 0.8s; }
+    .b11 { animation-delay: 0.25s; }
+    .b12 { animation-delay: 0.65s; }
+    .b13 { animation-delay: 0.45s; }
+    .b14 { animation-delay: 0.1s; }
+    .b15 { animation-delay: 0.75s; }
+    .b16 { animation-delay: 0.3s; }
+    .b17 { animation-delay: 0.55s; }
+    .b18 { animation-delay: 0.85s; }
+    .b19 { animation-delay: 0.4s; }
+    .b20 { animation-delay: 0.2s; }
+  </style>
+  <defs>
+    <linearGradient id="eqGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="60%" stop-color="#7928CA" />
+      <stop offset="100%" stop-color="#FF007F" />
+    </linearGradient>
+  </defs>
+  <!-- 20 animated equalizer bars -->
+  <g transform="translate(10, 22) scale(1, -1)">
+    <rect class="bar b1" x="0" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b2" x="14" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b3" x="28" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b4" x="42" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b5" x="56" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b6" x="70" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b7" x="84" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b8" x="98" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b9" x="112" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b10" x="126" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b11" x="140" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b12" x="154" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b13" x="168" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b14" x="182" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b15" x="196" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b16" x="210" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b17" x="224" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b18" x="238" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b19" x="252" y="0" width="8" height="20" rx="3" />
+    <rect class="bar b20" x="266" y="0" width="8" height="20" rx="3" />
+  </g>
+</svg>

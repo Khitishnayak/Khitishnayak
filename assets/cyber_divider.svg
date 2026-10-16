@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="6" viewBox="0 0 800 6" fill="none">
+  <style>
+    .track {
+      fill: #161b22;
+    }
+    .laser {
+      animation: scan 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    @keyframes scan {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(850px); }
+    }
+  </style>
+  <defs>
+    <linearGradient id="laserGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0" />
+      <stop offset="30%" stop-color="#00F0FF" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="70%" stop-color="#FF007F" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#7928CA" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect class="track" x="0" y="2" width="800" height="2" rx="1" />
+  <rect class="laser" x="0" y="1" width="180" height="4" rx="2" fill="url(#laserGrad)" filter="drop-shadow(0 0 4px #00F0FF)" />
+</svg>

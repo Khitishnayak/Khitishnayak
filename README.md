@@ -1,8 +1,8 @@
 <div align="center">
 
-<!-- Cinematic Film Banner: Boy Coding Overlooking Futuristic Tech City -->
+<!-- 🎬 SCENE 00: THE CINEMATIC ANIMATED BANNER (Boy Coding Overlooking Tech City) -->
 <a href="https://khitishkumar.vercel.app/" target="_blank">
-  <img src="./assets/banner.jpg" width="100%" style="border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.6);" alt="Khitish Kumar // Late Night Coding Overlooking Tech City" />
+  <img src="./assets/banner.gif" width="100%" style="border-radius: 12px; box-shadow: 0 16px 50px rgba(0, 240, 255, 0.25);" alt="Khitish Kumar // Late Night Coding Overlooking Tech City" />
 </a>
 
 <br><br>
@@ -14,20 +14,23 @@
   <i>"Somewhere between 03:00 AM, glowing monitors, and dark roast coffee — the future is compiled."</i>
 </p>
 
-<!-- Video Playbar / Ambient Soundtrack HUD -->
+<!-- 🎧 LIVE AUDIO EQUALIZER & SOUNDTRACK HUD -->
 <p align="center">
-  <code>▶ 02:47 ━━━━━━━━━━━━━━━━━━━━●────── 04:20 &nbsp; ⇄ &nbsp; ◃◃ &nbsp; ⅠⅠ &nbsp; ▹▹ &nbsp; ↻ &nbsp; 🔊 85%</code><br>
-  <sub>🎧 <b>Now Playing:</b> <i>Lofi Beats & Synthwave // Midnight in the High-Rise Studio (Overlooking Neon Horizon)</i></sub>
+  <img src="./assets/equalizer.svg" height="18" alt="Audio Spectrum" />
+  <br>
+  <code>▶ 02:47 ━━━━━━━━━━━━━━━━━━━━●────── 04:20 &nbsp; ⇄ &nbsp; ◃◃ &nbsp; ⅠⅠ &nbsp; ▹▹ &nbsp; ↻ &nbsp; 🔊 85%</code>
+  <br>
+  <sub>🎧 <b>Audio Feed:</b> <i>Lofi Synthwave // Midnight in the High-Rise Studio (Overlooking Neon Horizon)</i></sub>
 </p>
 
-<!-- Dynamic Animated Typing Reel -->
+<!-- ⚡ DYNAMIC ANIMATED TYPING REEL -->
 <a href="https://khitishkumar.vercel.app/">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=17&duration=2800&pause=900&color=00F0FF&center=true&vCenter=true&width=620&lines=Building+Autonomous+AI+Agents+%26+Intelligent+Pipelines...;Crafting+Next-Gen+Full-Stack+Startup+Products...;Late+Night+Coding+Sessions+from+the+High-Rise+Lab...;Arch+Linux+%2B+Hyprland+Wayland+Power+User;Turning+Deep+Abstract+Concepts+into+Art..." alt="Typing SVG" />
 </a>
 
 <br><br>
 
-<!-- Aesthetic Telemetry Chips -->
+<!-- 🟢 AESTHETIC TELEMETRY STATUS PILLS -->
 <a href="https://github.com/Khitishnayak">
   <img src="https://komarev.com/ghpvc/?username=Khitishnayak&style=flat-square&color=00f0ff&labelColor=16161e&label=VIEWS" alt="Profile Views" />
 </a>
@@ -41,20 +44,31 @@
 </a>
 &nbsp;
 <a href="https://archlinux.org/">
-  <img src="https://img.shields.io/badge/OS-ARCH%20%7C%20HYPRLAND-2ac3de?style=flat-square&logo=arch-linux&logoColor=white&labelColor=16161e" alt="OS" />
+  <img src="https://img.shields.io/badge/RIG-ARCH%20%7C%20HYPRLAND-2ac3de?style=flat-square&logo=arch-linux&logoColor=white&labelColor=16161e" alt="OS" />
 </a>
 &nbsp;
 <a href="mailto:kknayak049@gmail.com">
   <img src="https://img.shields.io/badge/SIGNAL-AVAILABLE%20FOR%20HIRE-9ece6a?style=flat-square&labelColor=16161e" alt="Signal" />
 </a>
 
+<br><br>
+
+<img src="./assets/cyber_divider.svg" width="100%" alt="Divider" />
+
 </div>
 
 <br>
 
----
+### 🌆 Scene 01 // The High-Rise Live Console
 
-### 🌆 Scene 01 // The High-Rise Sanctum
+<div align="center">
+
+<!-- ANIMATED TERMINAL WINDOW -->
+<img src="./assets/terminal_stream.svg" width="100%" alt="Animated Terminal Stream" />
+
+</div>
+
+<br>
 
 ```text
 ╭──────────────────────────────────────────────────────────────────────────────╮
@@ -73,7 +87,11 @@
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
----
+<div align="center">
+  <img src="./assets/cyber_divider.svg" width="100%" alt="Divider" />
+</div>
+
+<br>
 
 ### 🎬 Scene 02 // What's On The Screen (The Startup Lab)
 
@@ -83,7 +101,11 @@
 - 🐧 **Custom Workstation**: Daily driving a tuned Arch Linux + Hyprland rice with custom keybindings and Neovim workflows.
 - 🤝 **The Open Horizon**: Collaborating with founders, researchers, and fellow builders on audacious ideas.
 
----
+<div align="center">
+  <img src="./assets/cyber_divider.svg" width="100%" alt="Divider" />
+</div>
+
+<br>
 
 ### ⚡ Scene 03 // The Workbench (Tools of Creation)
 
@@ -117,9 +139,11 @@
   </a>
 </p>
 
+<img src="./assets/cyber_divider.svg" width="100%" alt="Divider" />
+
 </div>
 
----
+<br>
 
 ### 🎞️ Scene 04 // The Featured Works (Filmography)
 
@@ -134,9 +158,13 @@
 | 🌐 **[3D Portfolio](https://github.com/Khitishnayak/3D-PORTFOLIO)** | Spatial WebGL developer portfolio featuring dynamic three-dimensional lighting, shaders, and interactive nodes. | `Three.js` `WebGL` `React` | [**Roll Film ↗**](https://github.com/Khitishnayak/3D-PORTFOLIO) |
 | ✈️ **[TravelWise](https://github.com/Khitishnayak/Travelwise1)** | Intelligent travel itinerary architect and dynamic destination exploration engine. | `React` `REST APIs` `Tailwind` | [**Roll Film ↗**](https://github.com/Khitishnayak/Travelwise1) |
 
+<br>
+
+<img src="./assets/cyber_divider.svg" width="100%" alt="Divider" />
+
 </div>
 
----
+<br>
 
 ### 📊 Scene 05 // Telemetry & Activity Matrix
 
@@ -161,7 +189,7 @@
 
 <div align="center">
 
-#### 🐍 Midnight Matrix // Contribution Stream
+#### 🐍 Midnight Matrix // Animated Contribution Stream
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Khitishnayak/Khitishnayak/output/github-contribution-grid-snake-dark.svg">
@@ -169,9 +197,13 @@
   <img alt="GitHub Contribution Grid Snake" src="https://raw.githubusercontent.com/Khitishnayak/Khitishnayak/output/github-contribution-grid-snake-dark.svg" width="95%">
 </picture>
 
+<br><br>
+
+<img src="./assets/cyber_divider.svg" width="100%" alt="Divider" />
+
 </div>
 
----
+<br>
 
 ### 🎯 Skill Spectrum // Diagnostics
 
@@ -186,7 +218,11 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
----
+<div align="center">
+  <img src="./assets/cyber_divider.svg" width="100%" alt="Divider" />
+</div>
+
+<br>
 
 ### 📻 Scene 06 // End Credits & Uplink (Connect)
 
@@ -217,6 +253,9 @@
 </a>
 
 <br><br>
+
+<!-- 🌊 ANIMATED WAVING CAPSULE FOOTER -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff007f,25:7928ca,75:00f0ff,100:050811&height=120&section=footer&text=Stay%20Cyber%20%E2%9C%A6%20Keep%20Compiling&fontSize=22&fontColor=ffffff&fontAlignY=65" width="100%" alt="Footer" />
 
 <p align="center">
   <i>"We are the architects of the silent hours, building the software that greets the morning sun."</i>
