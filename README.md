@@ -8,7 +8,7 @@
 <br><br>
 
 # 🎬 ᴋʜɪᴛɪꜱʜ ᴋᴜᴍᴀʀ
-### *AI Systems Engineer & Full-Stack Architect • Startup Founder Spirit*
+### *AI Systems Engineer & Full-Stack Architect • Opensource Contributor*
 
 <p>
   <i>"Somewhere between 03:00 AM, glowing monitors, and dark roast coffee — the future is compiled."</i>
