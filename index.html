@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>KHITISH KUMAR // 3D SPATIAL HOLOGRAM LABORATORY</title>
+  <meta name="description" content="Awwwards-Caliber Interactive 3D Holographic Experience & Spatial AI Lab by Khitish Kumar Nayak.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030712;
+      --holo-cyan: #00f0ff;
+      --holo-magenta: #ff007f;
+      --holo-purple: #8b5cf6;
+      --holo-emerald: #10b981;
+      --holo-amber: #f59e0b;
+      --theme-color: var(--holo-cyan);
+      --font-mono: 'Fira Code', monospace;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--bg);
+      color: #fff;
+      font-family: var(--font-mono);
+    }
+
+    #webgl-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Cinematic CRT Scanlines & Grain */
+    .scanlines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+      background-size: 100% 3px, 6px 100%;
+      opacity: 0.75;
+    }
+
+    .vignette {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9;
+      background: radial-gradient(circle at center, transparent 45%, rgba(2, 4, 10, 0.88) 100%);
+    }
+
+    /* HUD Interface Overlay */
+    .hud-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 20;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 32px;
+    }
+
+    .hud-layer > * {
+      pointer-events: auto;
+    }
+
+    /* Top Floating Island Header */
+    .header-island {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: rgba(6, 13, 26, 0.65);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 9999px;
+      padding: 10px 24px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      transition: border-color 0.4s ease;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .beacon-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--holo-emerald);
+      box-shadow: 0 0 12px var(--holo-emerald);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .brand-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #fff;
+    }
+
+    .brand-title span {
+      color: var(--theme-color);
+      transition: color 0.4s ease;
+    }
+
+    .header-center-info {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    .status-tag {
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      color: var(--theme-color);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      transition: color 0.4s ease, border-color 0.4s ease;
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hud-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hud-btn:hover {
+      background: rgba(0, 240, 255, 0.15);
+      border-color: var(--theme-color);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 0 16px rgba(0, 240, 255, 0.3);
+    }
+
+    .hud-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Corner Framing Brackets */
+    .corner-bracket {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-color: var(--theme-color);
+      border-style: solid;
+      pointer-events: none;
+      transition: border-color 0.4s ease;
+      opacity: 0.8;
+    }
+    .bracket-tl { top: 24px; left: 24px; border-width: 2px 0 0 2px; }
+    .bracket-tr { top: 24px; right: 24px; border-width: 2px 2px 0 0; }
+    .bracket-bl { bottom: 24px; left: 24px; border-width: 0 0 2px 2px; }
+    .bracket-br { bottom: 24px; right: 24px; border-width: 0 2px 2px 0; }
+
+    /* Telemetry Side Panels */
+    .telemetry-left {
+      position: absolute;
+      left: 36px;
+      top: 110px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 11px;
+      color: #64748b;
+      max-width: 240px;
+    }
+
+    .telem-box {
+      background: rgba(6, 13, 26, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 2px solid var(--theme-color);
+      padding: 10px 14px;
+      border-radius: 6px;
+      backdrop-filter: blur(10px);
+      transition: border-color 0.4s ease;
+    }
+
+    .telem-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+
+    .telem-val {
+      color: #f1f5f9;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .telemetry-right {
+      position: absolute;
+      right: 36px;
+      top: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 16px;
+      font-size: 11px;
+      color: #64748b;
+      max-width: 260px;
+    }
+
+    /* Live Equalizer Bar Widget */
+    .audio-eq {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 24px;
+      margin-top: 6px;
+    }
+
+    .eq-bar {
+      width: 4px;
+      background: var(--theme-color);
+      border-radius: 2px;
+      transition: height 0.08s ease, background-color 0.4s ease;
+    }
+
+    /* Bottom Control Cockpit */
+    .cockpit-deck {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    .control-cluster {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: rgba(6, 13, 26, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      padding: 12px 18px;
+      border-radius: 18px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .cluster-title {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    .pill-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill-option {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .pill-option:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .pill-option.active {
+      background: rgba(0, 240, 255, 0.18);
+      border-color: var(--theme-color);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+    }
+
+    .theme-circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .theme-circle.active, .theme-circle:hover {
+      transform: scale(1.2);
+      border-color: #fff;
+    }
+
+    /* Center Crosshair */
+    .center-reticle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140px;
+      height: 140px;
+      border: 1px dashed rgba(0, 240, 255, 0.18);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: rotateDial 40s linear infinite;
+    }
+
+    @keyframes rotateDial {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* Glitch Flash Animation */
+    .glitch-flash {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 240, 255, 0.2);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      opacity: 0;
+      z-index: 100;
+    }
+
+    @media (max-width: 768px) {
+      .hud-layer {
+        padding: 16px;
+      }
+      .telemetry-left, .telemetry-right {
+        display: none;
+      }
+      .header-center-info {
+        display: none;
+      }
+      .cockpit-deck {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .control-cluster {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- WebGL Three.js Scene Container -->
+  <div id="webgl-container"></div>
+
+  <!-- Screen Scanlines & Optical Vignette -->
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+  <div id="glitch-flash" class="glitch-flash"></div>
+
+  <!-- Corner Precision Brackets -->
+  <div class="corner-bracket bracket-tl"></div>
+  <div class="corner-bracket bracket-tr"></div>
+  <div class="corner-bracket bracket-bl"></div>
+  <div class="corner-bracket bracket-br"></div>
+
+  <!-- Center Targeting Reticle -->
+  <div class="center-reticle"></div>
+
+  <!-- HUD Interface Layer -->
+  <div class="hud-layer">
+    <!-- Top Floating Header -->
+    <header class="header-island">
+      <div class="brand-group">
+        <div class="beacon-dot"></div>
+        <div class="brand-title">KHITISH KUMAR // <span>HOLO-SPEC 04</span></div>
+      </div>
+      <div class="header-center-info">
+        <div class="status-tag">SYSTEM: STABLE</div>
+        <div>COHERENCE: <span id="coherence-val" style="color: #fff; font-weight: 600;">99.87%</span></div>
+        <div>ARCH LINUX // HYPRLAND</div>
+      </div>
+      <div class="header-links">
+        <button id="audio-toggle" class="hud-btn">
+          <span>🔊</span> <span id="audio-state-text">AUDIO ON</span>
+        </button>
+        <button id="glitch-trigger" class="hud-btn" style="border-color: rgba(255, 0, 127, 0.4);">
+          <span>⚡</span> GLITCH
+        </button>
+        <a href="https://github.com/Khitishnayak" class="hud-btn" target="_blank">
+          <span>↗</span> PROFILE
+        </a>
+      </div>
+    </header>
+
+    <!-- Left Telemetry Panel -->
+    <div class="telemetry-left">
+      <div class="telem-box">
+        <div class="telem-label">// SPATIAL TELEMETRY</div>
+        <div class="telem-val" id="coords-val">X: +00.00 | Y: +00.00 | Z: +03.20</div>
+      </div>
+      <div class="telem-box">
+        <div class="telem-label">// TOPOLOGY NODES</div>
+        <div class="telem-val" id="topology-val">810 NODES // 788 EDGES</div>
+      </div>
+      <div class="telem-box">
+        <div class="telem-label">// AUDIO SYNTH FEED</div>
+        <div class="telem-val">MIDNIGHT HIGH-RISE 03:00</div>
+        <div class="audio-eq" id="eq-container">
+          <!-- 12 Equalizer Bars -->
+          <div class="eq-bar" style="height: 12px;"></div>
+          <div class="eq-bar" style="height: 18px;"></div>
+          <div class="eq-bar" style="height: 8px;"></div>
+          <div class="eq-bar" style="height: 22px;"></div>
+          <div class="eq-bar" style="height: 14px;"></div>
+          <div class="eq-bar" style="height: 20px;"></div>
+          <div class="eq-bar" style="height: 10px;"></div>
+          <div class="eq-bar" style="height: 16px;"></div>
+          <div class="eq-bar" style="height: 24px;"></div>
+          <div class="eq-bar" style="height: 15px;"></div>
+          <div class="eq-bar" style="height: 19px;"></div>
+          <div class="eq-bar" style="height: 11px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Diagnostics Panel -->
+    <div class="telemetry-right">
+      <div class="telem-box">
+        <div class="telem-label">// RENDER LATENCY</div>
+        <div class="telem-val" id="fps-val">60.0 FPS // 16.6ms</div>
+      </div>
+      <div class="telem-box">
+        <div class="telem-label">// MODEL IDENTITY</div>
+        <div class="telem-val" id="model-name-val">CANONICAL HUMAN FACE</div>
+      </div>
+      <div class="telem-box">
+        <div class="telem-label">// HARDWARE PROFILE</div>
+        <div class="telem-val">HYPRLAND WAYLAND • NEOVIM</div>
+      </div>
+    </div>
+
+    <!-- Bottom Cockpit Controls -->
+    <div class="cockpit-deck">
+      <!-- 3D Model Switcher -->
+      <div class="control-cluster">
+        <div class="cluster-title">3D HOLOGRAPHIC PROJECTION MODEL</div>
+        <div class="pill-group" id="model-pills">
+          <button class="pill-option active" data-model="avatar">01 // CYBERNETIC AVATAR</button>
+          <button class="pill-option" data-model="core">02 // QUANTUM CORE</button>
+          <button class="pill-option" data-model="torus">03 // NEURAL HYPER-TORUS</button>
+        </div>
+      </div>
+
+      <!-- Color Theme Switcher -->
+      <div class="control-cluster">
+        <div class="cluster-title">HOLOGRAPHIC CHROMATIC SPECTRUM</div>
+        <div class="pill-group" style="align-items: center; gap: 12px;">
+          <div class="theme-circle active" style="background: #00f0ff;" data-color="#00f0ff" title="Electric Cyan"></div>
+          <div class="theme-circle" style="background: #8b5cf6;" data-color="#8b5cf6" title="Neon Ultraviolet"></div>
+          <div class="theme-circle" style="background: #ff007f;" data-color="#ff007f" title="Phantom Rose"></div>
+          <div class="theme-circle" style="background: #10b981;" data-color="#10b981" title="Quantum Emerald"></div>
+          <div class="theme-circle" style="background: #f59e0b;" data-color="#f59e0b" title="Solar Gold"></div>
+        </div>
+      </div>
+
+      <!-- Rotation Mode & Interaction Instruction -->
+      <div class="control-cluster" style="text-align: right;">
+        <div class="cluster-title">SPATIAL INTERACTION</div>
+        <div style="font-size: 11px; color: #94a3b8; margin-top: 4px;">
+          DRAG / SWIPE TO ROTATE 3D • SCROLL TO ZOOM
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three.js + OrbitControls from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <script>
+    // --- Audio Synthesis Setup (Web Audio API) ---
+    let audioCtx = null;
+    let isAudioEnabled = true;
+    let droneOsc = null;
+    let droneGain = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        // Ambient Sci-Fi Drone
+        droneOsc = audioCtx.createOscillator();
+        const droneFilter = audioCtx.createBiquadFilter();
+        droneGain = audioCtx.createGain();
+
+        droneOsc.type = 'sawtooth';
+        droneOsc.frequency.setValueAtTime(55, audioCtx.currentTime); // Low A
+
+        droneFilter.type = 'lowpass';
+        droneFilter.frequency.setValueAtTime(140, audioCtx.currentTime);
+
+        droneGain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+
+        droneOsc.connect(droneFilter);
+        droneFilter.connect(droneGain);
+        droneGain.connect(audioCtx.destination);
+        droneOsc.start();
+      }
+    }
+
+    function playChirp(freq = 880, duration = 0.08) {
+      if (!audioCtx || !isAudioEnabled) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(freq * 1.5, audioCtx.currentTime + duration);
+        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function playGlitchSound() {
+      if (!audioCtx || !isAudioEnabled) return;
+      try {
+        const bufferSize = audioCtx.sampleRate * 0.15;
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.5));
+        }
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(1200, audioCtx.currentTime);
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+        noise.start();
+      } catch (e) {}
+    }
+
+    document.getElementById('audio-toggle').addEventListener('click', () => {
+      initAudio();
+      isAudioEnabled = !isAudioEnabled;
+      if (droneGain) {
+        droneGain.gain.setValueAtTime(isAudioEnabled ? 0.04 : 0, audioCtx.currentTime);
+      }
+      document.getElementById('audio-state-text').innerText = isAudioEnabled ? 'AUDIO ON' : 'AUDIO OFF';
+      playChirp(440, 0.05);
+    });
+
+    // --- Three.js Hologram Engine ---
+    let scene, camera, renderer, controls;
+    let currentModelGroup = null;
+    let avatarGroup, coreGroup, torusGroup;
+    let emitterGroup;
+    let particleSystem;
+    let activeThemeColor = new THREE.Color(0x00f0ff);
+    let avatarMeshJson = null;
+
+    const container = document.getElementById('webgl-container');
+
+    function initThree() {
+      // Scene
+      scene = new THREE.Scene();
+      scene.fog = new THREE.FogExp2(0x030712, 0.08);
+
+      // Camera
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+      camera.position.set(0, 0.5, 3.8);
+
+      // Renderer
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      // OrbitControls
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.maxDistance = 6.0;
+      controls.minDistance = 1.8;
+      controls.maxPolarAngle = Math.PI / 2 + 0.15; // Don't flip below pedestal
+
+      // Holographic Emitter Pedestal
+      createEmitterPedestal();
+
+      // Holographic Quantum Particles
+      createParticles();
+
+      // Build Models
+      coreGroup = createQuantumCore();
+      torusGroup = createNeuralTorus();
+      
+      // Load Avatar JSON and build Avatar Model
+      fetch('./assets/avatar_mesh.json')
+        .then(res => res.json())
+        .then(data => {
+          avatarMeshJson = data;
+          avatarGroup = createAvatarModel(data);
+          setModel('avatar');
+        })
+        .catch(err => {
+          console.warn("Avatar JSON fetch fallback:", err);
+          // Fallback to core if file loading local
+          setModel('core');
+        });
+
+      // Window resize
+      window.addEventListener('resize', onWindowResize);
+    }
+
+    function createEmitterPedestal() {
+      emitterGroup = new THREE.Group();
+
+      // Concentric glowing rings
+      const ringRadii = [1.8, 1.4, 1.0, 0.6];
+      ringRadii.forEach((r, idx) => {
+        const ringGeom = new THREE.RingGeometry(r - 0.015, r, 64);
+        const ringMat = new THREE.MeshBasicMaterial({
+          color: activeThemeColor,
+          side: THREE.DoubleSide,
+          transparent: true,
+          opacity: 0.25 + idx * 0.15
+        });
+        const ringMesh = new THREE.Mesh(ringGeom, ringMat);
+        ringMesh.rotation.x = -Math.PI / 2;
+        ringMesh.position.y = -1.45;
+        emitterGroup.add(ringMesh);
+      });
+
+      // Holographic Grid
+      const grid = new THREE.GridHelper(6, 24, activeThemeColor, 0x1e293b);
+      grid.position.y = -1.46;
+      grid.material.transparent = true;
+      grid.material.opacity = 0.35;
+      emitterGroup.add(grid);
+
+      // Light Cone Cylinder
+      const coneGeom = new THREE.CylinderGeometry(1.6, 0.6, 2.8, 32, 1, true);
+      const coneMat = new THREE.MeshBasicMaterial({
+        color: activeThemeColor,
+        transparent: true,
+        opacity: 0.05,
+        side: THREE.DoubleSide,
+        depthWrite: false
+      });
+      const cone = new THREE.Mesh(coneGeom, coneMat);
+      cone.position.y = -0.05;
+      emitterGroup.add(cone);
+
+      scene.add(emitterGroup);
+    }
+
+    function createParticles() {
+      const pCount = 180;
+      const geom = new THREE.BufferGeometry();
+      const pos = new Float32Array(pCount * 3);
+      for (let i = 0; i < pCount; i++) {
+        pos[i * 3 + 0] = (Math.random() - 0.5) * 2.8;
+        pos[i * 3 + 1] = (Math.random() - 0.5) * 3.0;
+        pos[i * 3 + 2] = (Math.random() - 0.5) * 2.8;
+      }
+      geom.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      const mat = new THREE.PointsMaterial({
+        size: 0.035,
+        color: activeThemeColor,
+        transparent: true,
+        opacity: 0.75,
+        blending: THREE.AdditiveBlending
+      });
+      particleSystem = new THREE.Points(geom, mat);
+      scene.add(particleSystem);
+    }
+
+    // 01: Canonical MediaPipe Face Avatar Model
+    function createAvatarModel(data) {
+      const grp = new THREE.Group();
+      const verts = data.verts;
+      const edges = data.edges;
+
+      // Lines geometry for wireframe
+      const linePositions = [];
+      for (let i = 0; i < edges.length; i++) {
+        const [i1, i2] = edges[i];
+        const v1 = verts[i1];
+        const v2 = verts[i2];
+        linePositions.push(v1[0], v1[1], v1[2]);
+        linePositions.push(v2[0], v2[1], v2[2]);
+      }
+
+      const lineGeom = new THREE.BufferGeometry();
+      lineGeom.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+      const lineMat = new THREE.LineBasicMaterial({
+        color: activeThemeColor,
+        transparent: true,
+        opacity: 0.85
+      });
+      const wireframe = new THREE.LineSegments(lineGeom, lineMat);
+      grp.add(wireframe);
+
+      // Points for landmark nodes
+      const landmarkPos = [];
+      for (const groupName in data.landmarks) {
+        const indices = data.landmarks[groupName];
+        indices.forEach(idx => {
+          const v = verts[idx];
+          landmarkPos.push(v[0], v[1], v[2]);
+        });
+      }
+      const ptGeom = new THREE.BufferGeometry();
+      ptGeom.setAttribute('position', new THREE.Float32BufferAttribute(landmarkPos, 3));
+      const ptMat = new THREE.PointsMaterial({
+        size: 0.045,
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.95
+      });
+      const pts = new THREE.Points(ptGeom, ptMat);
+      grp.add(pts);
+
+      // Orbital gimbal rings
+      const ring1Geom = new THREE.TorusGeometry(1.65, 0.008, 16, 64);
+      const ring1Mat = new THREE.MeshBasicMaterial({ color: 0x8b5cf6, transparent: true, opacity: 0.6 });
+      const ring1 = new THREE.Mesh(ring1Geom, ring1Mat);
+      ring1.rotation.x = 0.6;
+      grp.add(ring1);
+      grp.userData.ring1 = ring1;
+
+      grp.position.y = 0.2;
+      return grp;
+    }
+
+    // 02: Quantum Polyhedral Core
+    function createQuantumCore() {
+      const grp = new THREE.Group();
+      
+      // Icosahedron wireframe
+      const icoGeom = new THREE.IcosahedronGeometry(1.0, 1);
+      const wireGeom = new THREE.WireframeGeometry(icoGeom);
+      const wireMat = new THREE.LineBasicMaterial({ color: activeThemeColor, transparent: true, opacity: 0.9 });
+      const wire = new THREE.LineSegments(wireGeom, wireMat);
+      grp.add(wire);
+
+      // Inner stellated octahedron
+      const octGeom = new THREE.OctahedronGeometry(0.55, 0);
+      const octWireGeom = new THREE.WireframeGeometry(octGeom);
+      const octMat = new THREE.LineBasicMaterial({ color: 0xff007f, transparent: true, opacity: 0.85 });
+      const oct = new THREE.LineSegments(octWireGeom, octMat);
+      grp.add(oct);
+      grp.userData.innerCore = oct;
+
+      // Orbiting gimbal rings
+      const g1Geom = new THREE.TorusGeometry(1.5, 0.01, 16, 64);
+      const g1 = new THREE.Mesh(g1Geom, new THREE.MeshBasicMaterial({ color: activeThemeColor, transparent: true, opacity: 0.5 }));
+      grp.add(g1);
+      grp.userData.g1 = g1;
+
+      grp.position.y = 0.2;
+      return grp;
+    }
+
+    // 03: Neural Hyper-Torus
+    function createNeuralTorus() {
+      const grp = new THREE.Group();
+      const geom = new THREE.TorusKnotGeometry(0.85, 0.24, 128, 32, 2, 3);
+      const wireGeom = new THREE.WireframeGeometry(geom);
+      const mat = new THREE.LineBasicMaterial({ color: activeThemeColor, transparent: true, opacity: 0.85 });
+      const wire = new THREE.LineSegments(wireGeom, mat);
+      grp.add(wire);
+
+      grp.position.y = 0.2;
+      return grp;
+    }
+
+    function setModel(modelKey) {
+      if (currentModelGroup) {
+        scene.remove(currentModelGroup);
+      }
+
+      if (modelKey === 'avatar' && avatarGroup) {
+        currentModelGroup = avatarGroup;
+        document.getElementById('topology-val').innerText = '810 NODES // 788 EDGES';
+        document.getElementById('model-name-val').innerText = 'CANONICAL HUMAN FACE';
+      } else if (modelKey === 'core' && coreGroup) {
+        currentModelGroup = coreGroup;
+        document.getElementById('topology-val').innerText = '42 NODES // 120 EDGES';
+        document.getElementById('model-name-val').innerText = 'QUANTUM ICOSAHEDRON';
+      } else if (modelKey === 'torus' && torusGroup) {
+        currentModelGroup = torusGroup;
+        document.getElementById('topology-val').innerText = '4096 SEGMENTS // (2,3) KNOT';
+        document.getElementById('model-name-val').innerText = 'NEURAL HYPER-TORUS';
+      }
+
+      if (currentModelGroup) {
+        scene.add(currentModelGroup);
+      }
+      playChirp(720, 0.06);
+    }
+
+    function setThemeColor(hex) {
+      activeThemeColor.set(hex);
+      document.documentElement.style.setProperty('--theme-color', hex);
+
+      // Update materials
+      scene.traverse(child => {
+        if (child.material && child.material.color && child !== particleSystem) {
+          if (child.material.color.getHex() !== 0xffffff && child.material.color.getHex() !== 0x8b5cf6) {
+            child.material.color.set(hex);
+          }
+        }
+      });
+      if (particleSystem) {
+        particleSystem.material.color.set(hex);
+      }
+      playChirp(600, 0.05);
+    }
+
+    // UI Pill Listeners
+    document.getElementById('model-pills').addEventListener('click', e => {
+      const btn = e.target.closest('.pill-option');
+      if (!btn) return;
+      document.querySelectorAll('#model-pills .pill-option').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      initAudio();
+      setModel(btn.dataset.model);
+    });
+
+    document.querySelectorAll('.theme-circle').forEach(circle => {
+      circle.addEventListener('click', () => {
+        document.querySelectorAll('.theme-circle').forEach(c => c.classList.remove('active'));
+        circle.classList.add('active');
+        initAudio();
+        setThemeColor(circle.dataset.color);
+      });
+    });
+
+    // Glitch Disruption Button
+    document.getElementById('glitch-trigger').addEventListener('click', () => {
+      initAudio();
+      playGlitchSound();
+      const flash = document.getElementById('glitch-flash');
+      flash.style.opacity = '1';
+      camera.position.x += (Math.random() - 0.5) * 0.4;
+      camera.position.y += (Math.random() - 0.5) * 0.4;
+      setTimeout(() => {
+        flash.style.opacity = '0';
+      }, 120);
+    });
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    // --- Animation Loop ---
+    let clock = new THREE.Clock();
+    let frameCount = 0;
+    let fpsTime = 0;
+    const eqBars = document.querySelectorAll('.eq-bar');
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      const delta = clock.getDelta();
+      const time = clock.getElapsedTime();
+
+      // Controls update
+      controls.update();
+
+      // Model Rotation
+      if (currentModelGroup) {
+        currentModelGroup.rotation.y += delta * 0.35;
+        if (currentModelGroup.userData.ring1) {
+          currentModelGroup.userData.ring1.rotation.y -= delta * 0.6;
+        }
+        if (currentModelGroup.userData.innerCore) {
+          currentModelGroup.userData.innerCore.rotation.x += delta * 0.5;
+          currentModelGroup.userData.innerCore.rotation.y += delta * 0.7;
+        }
+        if (currentModelGroup.userData.g1) {
+          currentModelGroup.userData.g1.rotation.x += delta * 0.4;
+        }
+      }
+
+      // Emitter rotation
+      if (emitterGroup) {
+        emitterGroup.rotation.y += delta * 0.15;
+      }
+
+      // Particles drift upward
+      if (particleSystem) {
+        const positions = particleSystem.geometry.attributes.position.array;
+        for (let i = 1; i < positions.length; i += 3) {
+          positions[i] += delta * 0.6;
+          if (positions[i] > 2.0) positions[i] = -1.4;
+        }
+        particleSystem.geometry.attributes.position.needsUpdate = true;
+      }
+
+      // Equalizer bars modulation
+      if (isAudioEnabled) {
+        eqBars.forEach((bar, idx) => {
+          const h = 6 + Math.abs(Math.sin(time * 5 + idx * 0.8)) * 18;
+          bar.style.height = `${h}px`;
+        });
+      }
+
+      // Diagnostics Telemetry Update
+      frameCount++;
+      fpsTime += delta;
+      if (fpsTime >= 0.5) {
+        const fps = Math.round(frameCount / fpsTime);
+        document.getElementById('fps-val').innerText = `${fps} FPS // ${(1000/fps).toFixed(1)}ms`;
+        frameCount = 0;
+        fpsTime = 0;
+
+        document.getElementById('coords-val').innerText = 
+          `X: ${camera.position.x >= 0 ? '+' : ''}${camera.position.x.toFixed(2)} | ` +
+          `Y: ${camera.position.y >= 0 ? '+' : ''}${camera.position.y.toFixed(2)} | ` +
+          `Z: ${camera.position.z >= 0 ? '+' : ''}${camera.position.z.toFixed(2)}`;
+
+        const coh = (99.82 + Math.sin(time * 2) * 0.14).toFixed(2);
+        document.getElementById('coherence-val').innerText = `${coh}%`;
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    // Start
+    initThree();
+    animate();
+  </script>
+</body>
+</html>

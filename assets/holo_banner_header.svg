@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" viewBox="0 0 900 240" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040714" />
+      <stop offset="50%" stop-color="#070c1e" />
+      <stop offset="100%" stop-color="#03050b" />
+    </linearGradient>
+
+    <!-- Holographic Cyan-to-Purple Glow -->
+    <linearGradient id="holoGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ff007f" />
+    </linearGradient>
+
+    <linearGradient id="laserLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0" />
+      <stop offset="30%" stop-color="#00f0ff" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="70%" stop-color="#8b5cf6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ff007f" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Scanline Pattern -->
+    <pattern id="scanlines" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="100" y2="0" stroke="#000000" stroke-opacity="0.25" stroke-width="1.5" />
+    </pattern>
+
+    <filter id="neonBloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseBeacon {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.85); }
+    }
+    @keyframes scanAcross {
+      0% { transform: translateX(-300px); }
+      100% { transform: translateX(1100px); }
+    }
+    .beacon {
+      animation: pulseBeacon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      transform-origin: 50px 42px;
+    }
+    .sweep-laser {
+      animation: scanAcross 4s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    }
+    .mono {
+      font-family: 'Fira Code', 'Courier New', monospace;
+    }
+    .sans {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+
+  <!-- Outer Double-Bezel Frame -->
+  <rect x="2" y="2" width="896" height="236" rx="16" fill="url(#bgGrad)" stroke="#00f0ff" stroke-opacity="0.22" stroke-width="1.5" />
+  <rect x="8" y="8" width="884" height="224" rx="12" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+  <rect x="8" y="8" width="884" height="224" rx="12" fill="url(#scanlines)" />
+
+  <!-- Corner Precision Brackets -->
+  <path d="M14 28V14H28" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" />
+  <path d="M886 28V14H872" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" />
+  <path d="M14 212V226H28" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" />
+  <path d="M886 212V226H872" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Top Telemetry Status Pill -->
+  <rect x="40" y="28" width="220" height="26" rx="13" fill="#061224" stroke="#00f0ff" stroke-opacity="0.4" />
+  <circle class="beacon" cx="54" cy="41" r="4.5" fill="#10b981" />
+  <text class="mono" x="66" y="45" font-size="10" font-weight="600" fill="#f1f5f9" letter-spacing="1.2">SYSTEM // ONLINE [24/7]</text>
+
+  <!-- Top Right Live Coordinate Telemetry -->
+  <text class="mono" x="850" y="44" font-size="10.5" font-weight="500" fill="#64748b" text-anchor="end">
+    COORDINATES: <tspan fill="#00f0ff">31.3260° N, 75.5762° E</tspan> // JALANDHAR
+  </text>
+
+  <!-- Hero Typography -->
+  <g transform="translate(42, 108)">
+    <text class="sans" x="0" y="0" font-size="34" font-weight="800" fill="#ffffff" letter-spacing="0.5">
+      KHITISH KUMAR NAYAK
+    </text>
+    <text class="mono" x="2" y="28" font-size="13" font-weight="600" fill="#00f0ff" letter-spacing="1.5">
+      AI SYSTEMS ENGINEER &amp; CREATIVE FULL-STACK ARCHITECT
+    </text>
+    <text class="mono" x="2" y="52" font-size="11.5" font-weight="400" fill="#94a3b8" letter-spacing="0.4">
+      "Architecting autonomous multi-agent cognition &amp; spatial 3D WebGL interfaces."
+    </text>
+  </g>
+
+  <!-- Bottom Hardware Badges -->
+  <g transform="translate(42, 192)">
+    <!-- Badge 1: Rig -->
+    <rect x="0" y="0" width="170" height="24" rx="6" fill="#0a1628" stroke="#00f0ff" stroke-opacity="0.3" />
+    <text class="mono" x="12" y="16" font-size="10" font-weight="600" fill="#cbd5e1">RIG: <tspan fill="#00f0ff">ARCH + HYPRLAND</tspan></text>
+
+    <!-- Badge 2: Kernel -->
+    <rect x="182" y="0" width="160" height="24" rx="6" fill="#0a1628" stroke="#8b5cf6" stroke-opacity="0.3" />
+    <text class="mono" x="194" y="16" font-size="10" font-weight="600" fill="#cbd5e1">CORE: <tspan fill="#8b5cf6">AUTONOMOUS AI</tspan></text>
+
+    <!-- Badge 3: WebGL -->
+    <rect x="354" y="0" width="150" height="24" rx="6" fill="#0a1628" stroke="#ff007f" stroke-opacity="0.3" />
+    <text class="mono" x="366" y="16" font-size="10" font-weight="600" fill="#cbd5e1">GRAPHICS: <tspan fill="#ff007f">THREE.JS 3D</tspan></text>
+
+    <!-- Badge 4: Status -->
+    <rect x="516" y="0" width="170" height="24" rx="6" fill="#0a1628" stroke="#10b981" stroke-opacity="0.3" />
+    <text class="mono" x="528" y="16" font-size="10" font-weight="600" fill="#cbd5e1">SIGNAL: <tspan fill="#10b981">OPEN TO VENTURES</tspan></text>
+  </g>
+
+  <!-- Right Decorative Reticle -->
+  <g transform="translate(800, 125)">
+    <circle cx="0" cy="0" r="32" stroke="#00f0ff" stroke-opacity="0.18" stroke-dasharray="3 3" fill="none" />
+    <circle cx="0" cy="0" r="18" stroke="#8b5cf6" stroke-opacity="0.25" fill="none" />
+    <line x1="-38" y1="0" x2="-22" y2="0" stroke="#00f0ff" stroke-opacity="0.5" />
+    <line x1="22" y1="0" x2="38" y2="0" stroke="#00f0ff" stroke-opacity="0.5" />
+    <line x1="0" y1="-38" x2="0" y2="-22" stroke="#00f0ff" stroke-opacity="0.5" />
+    <line x1="0" y1="22" x2="0" y2="38" stroke="#00f0ff" stroke-opacity="0.5" />
+  </g>
+
+  <!-- Animated Laser Sweep Across Bottom -->
+  <rect x="14" y="228" width="872" height="1.5" fill="#1e293b" />
+  <rect class="sweep-laser" x="0" y="227" width="220" height="3" rx="1.5" fill="url(#laserLine)" />
+</svg>
